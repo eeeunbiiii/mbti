@@ -10,7 +10,7 @@ export default async function handler(req, res){
     const openai = new OpenAIApi(configuration);
 
     try { // mbti 계산
-      const prompt_mbti = `Please classify the following text into one of the 16 MBTI types: ${inputValue}\nType:`;
+      const prompt_mbti = `Please classify the following text into one of the 16 MBTI types in only four alphabet: ${inputValue}\nType:`;
 
       const completionsMbti = await openai.createCompletion({
         model: "text-davinci-003",
@@ -23,7 +23,7 @@ export default async function handler(req, res){
       
       const completionsEmo = await openai.createCompletion({
         model: "text-davinci-003",
-        prompt: `Output only three emojis that best represent ${mbti} \nType:`
+        prompt: `Output only three emojis that best represent ${mbti} without comma\nType:`
       })
       const emoji = completionsEmo.data.choices?.[0]?.text?.trim();
 

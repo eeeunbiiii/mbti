@@ -10,6 +10,7 @@ export default function Home() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    
 
     try {
       setLoading(true);
@@ -30,7 +31,7 @@ export default function Home() {
 
       setMbti(data.mbti);
       setEmoji(data.emoji);
-      setImageUrl(ImageData.image_url);
+      setImageUrl(ImageData.image_url); 
 
     } catch (error) {
       console.error(error);
@@ -54,7 +55,7 @@ export default function Home() {
               <p className="text-gray-700 text-lg">Loading...</p>
             </div>
           ) : (
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form className="space-y-6" onSubmit={handleSubmit} >
               <div>
                 <label
                   htmlFor="inputValue"
