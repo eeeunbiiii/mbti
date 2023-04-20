@@ -46,6 +46,7 @@ export default function Home() {
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
           MBTI Calculator
         </h2>
+        <p className="mt-6 text-center text-black">Find your cat soulmate</p>
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
