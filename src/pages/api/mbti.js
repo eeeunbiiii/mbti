@@ -23,7 +23,7 @@ export default async function handler(req, res){
       
       const completionsEmo = await openai.createCompletion({
         model: "text-davinci-003",
-        prompt: `Output only three emojis that best represent ${mbti} without comma\nType:`
+        prompt: `Output only three emojis that best represent ${mbti} without any comment\nType:`
       })
       const emoji = completionsEmo.data.choices?.[0]?.text?.trim();
 
