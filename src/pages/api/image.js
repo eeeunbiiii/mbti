@@ -11,7 +11,7 @@ export default async function handler(req, res){
 
     try { // 이미지 요청
         const response = await openai.createImage({
-            prompt: `photo of ${inputValue} cat`,
+            prompt: `cat that best fits this sentence : ${inputValue}`,
             n: 1,
             size: "1024x1024",
         })
